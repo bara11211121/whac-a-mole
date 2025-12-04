@@ -36,8 +36,8 @@
         }
 
         .cell {
-            width: 100%;
-            height: 100%;
+            width: 100px;
+            height: 100px;
             background: #eee;
             border-radius: 8px;
             display: flex;
@@ -74,8 +74,8 @@
 <body>
     <div><h3>來打打打地鼠</h3></div>
     <div><button class="startBtn" id="startBtn">START</button></div>
-    <div class="score" id="score">得分:</div>
-    <div class="time" id="time">剩餘時間:</div>
+    <div class="score" id="score">得分:0</div>
+    <div class="time" id="time">剩餘時間:10秒</div>
     <div class="end" id="end"></div>
     <div class="grid">
         <div class="cell" id="c1"></div>
@@ -116,13 +116,15 @@
         function startGame(){
             startBtn.disabled = true;
             startBtn.innerText = '遊戲中';
-            let time = 20;
-            let score = 0;
+            let time = 10;
+            score = 0;
             let curremtMole = null;
             let timeInterval = null;
             let moleInterval = null;
             const scoreDisplay = document.getElementById("score");
-            scoreDisplay.innerText = '得分：';
+            const timeDisplay = document.getElementById("time");
+            scoreDisplay.textContent = '得分:' + score;
+            timeDisplay.textContent = '剩餘時間:10秒';
             clearMole();
             moleInterval = setInterval(showMole,1500);
             timeInterval = setInterval(updateTime,1000);
@@ -152,10 +154,9 @@
                     clearMole();
                     clearInterval(timeInterval);
                     clearInterval(moleInterval);
-                    timeDisplay.innerText = '時間到！';
+                    timeDisplay.innerText = '時間到!';
                     startBtn.disabled = false;
                     startBtn.innerText = 'START';
-
                 };
             };
         };
