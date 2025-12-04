@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .score {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .time {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .end {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+
+        .grid {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background: #eee;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 30px;
+            user-select: none;
+        }
+
+        .mole {
+            background: #ffcc00;
+
+        }
+
+        .mole::after {
+            content: "🐭";
+            font-size: 30px;
+        }
+
+        .startBtn {
+            font-size: 15px;
+            height: 40px;
+            width: 80px;
+            padding: 5px 5px;
+            border-radius: 15%;
+            background-color: #052037;
+            color: #eee;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>來打打打地鼠</h3>
+    </div>
+    <div><button class="startBtn" id="startBtn">START</button></div>
+    <div class="score" id="score">得分:</div>
+    <div class="time" id="time">剩餘時間:</div>
+    <div class="end" id="end"></div>
+    <div class="grid">
+        <div class="cell" id="c1"></div>
+        <div class="cell" id="c2"></div>
+        <div class="cell" id="c3"></div>
+        <div class="cell" id="c4"></div>
+        <div class="cell" id="c5"></div>
+        <div class="cell" id="c6"></div>
+        <div class="cell" id="c7"></div>
+        <div class="cell" id="c8"></div>
+        <div class="cell" id="c9"></div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
